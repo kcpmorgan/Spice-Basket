@@ -1,2 +1,2 @@
 # Spice-Basket
-Online store selling herbs and spices
+Online store selling natural herbs and spices
