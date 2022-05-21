@@ -6,7 +6,7 @@ import Quantitypicker from './quantityPicker';
 const Product = (props) => {
     return(
         <div className='product'>
-            <img classname="productImg" src={'/img/'+props.data.image}></img>
+            <img className='productImg' src={'/img/'+props.data.image}></img>
             <h3>{props.data.title}</h3>
             <label>${props.data.price}</label>
             <label>$Total</label>
