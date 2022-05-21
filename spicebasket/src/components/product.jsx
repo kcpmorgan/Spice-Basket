@@ -3,12 +3,12 @@ import Quantitypicker from './quantityPicker';
 
 // Arrow function
 
-const Product = () => {
+const Product = (props) => {
     return(
         <div className='product'>
-            <img src='https://picsum.photos/200/300'></img>
-            <h3>Cinnamon</h3>
-            <label>$Price</label>
+            <img classname="productImg" src={'/img/'+props.data.image}></img>
+            <h3>{props.data.title}</h3>
+            <label>${props.data.price}</label>
             <label>$Total</label>
             <Quantitypicker></Quantitypicker>
             <button>Add</button>

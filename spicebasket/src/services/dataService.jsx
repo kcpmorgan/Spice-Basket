@@ -4,7 +4,7 @@ var catalog = [
         price: 8.00,
         stock: 10,
         title: "Cinnamon",
-        image: "img-Cinnamon.jpeg",
+        image: "Cinnamon.jpeg",
         discount: 0,
         category: "Spices",
       },
@@ -13,7 +13,7 @@ var catalog = [
         price: 10.00,
         stock: 20,
         title: "Nutmeg",
-        image: "img-Nutmeg.png",
+        image: "Nutmeg.png",
         discount: 0,
         category: "Spices",
       },
@@ -22,7 +22,7 @@ var catalog = [
         price: 16.0,
         stock: 20,
         title: "Clove",
-        image: "imm-Cloves.jpeg",
+        image: "Cloves.jpeg",
         discount: 0,
         category: "Spices",
       },
@@ -31,7 +31,7 @@ var catalog = [
         price: 10.0,
         stock: 20,
         title: "Tumeric",
-        image: "img-Tumeric.jpeg",
+        image: "Tumeric.jpeg",
         discount: 0,
         category: "Spices",
       },
@@ -40,7 +40,7 @@ var catalog = [
         price: 16.0,
         stock: 20,
         title: "Bay Leaf",
-        image: "img-Bay Leaf.webp",
+        image: "Bay Leaf.webp",
         discount: 0,
         category: "Spices",
       },
@@ -49,7 +49,7 @@ var catalog = [
         price: 14.0,
         stock: 20,
         title: "Ginger",
-        image: "img-Ginger.jpeg",
+        image: "Ginger.jpeg",
         discount: 0,
         category: "Spices",
       },
@@ -58,8 +58,17 @@ var catalog = [
         price: 32.0,
         stock: 20,
         title: "Allspice",
-        image: "img-Allspice.jpeg",
+        image: "Allspice.jpeg",
         discount: 0,
         category: "Spices",
       }
-    ]
+    ];
+
+    class Dataservice{
+      getCatalog(){
+        //Inst to retrieve from the actual server
+
+        return catalog;
+      }
+    }
+export default Dataservice;
