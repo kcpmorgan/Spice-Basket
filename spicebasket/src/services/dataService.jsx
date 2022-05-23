@@ -61,6 +61,33 @@ var catalog = [
         image: "Allspice.jpeg",
         discount: 0,
         category: "Spices",
+      },
+      {
+        _id: "1s1008",
+        price: 37.0,
+        stock: 20,
+        title: "Mace",
+        image: "Mace.webp",
+        discount: 0,
+        category: "Spices",
+      },
+      {
+        _id: "1s1009",
+        price: 40.0,
+        stock: 20,
+        title: "Vanilla",
+        image: "Vanilla.jpeg",
+        discount: 0,
+        category: "Spices",
+      },
+      {
+        _id: "1s1010",
+        price: 25.0,
+        stock: 20,
+        title: "Anise",
+        image: "Anise.jpeg",
+        discount: 0,
+        category: "Spices",
       }
     ];
 

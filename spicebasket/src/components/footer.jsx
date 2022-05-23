@@ -3,7 +3,7 @@ import './footer.css';
 function Footer(){
     return(
         <div className="footer">
-            <h5>Footer</h5>
+            <h5>2022 Spice Basket LLC. All rights reserved.</h5>
         </div>
     );
 }
