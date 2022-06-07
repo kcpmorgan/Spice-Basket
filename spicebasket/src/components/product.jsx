@@ -27,6 +27,8 @@ const getTotal = () => {
             <label>${getTotal()}</label>
             <Quantitypicker onChange={onQuantityChange} ></Quantitypicker>
             <button class="btn btn-primary btn-sm" >Add</button>
+            
+            
          </div>);
 };
 

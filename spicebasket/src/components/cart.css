@@ -1,0 +1,12 @@
+.cart {
+  background-color: bisque;
+}
+
+.cart h6 {
+  padding-top: 3px;
+  color: lightslategray;
+  text-align: center;
+}
+.cart h3 {
+  text-align: center;
+}
