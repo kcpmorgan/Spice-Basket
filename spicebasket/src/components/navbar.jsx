@@ -23,8 +23,15 @@ function Navbar(){
           <Link className="nav-link" to="/about">About</Link>
         </li>
         <li className="nav-item">
+          <Link className="nav-link" to="/admin">Admin</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/todo">Shopping List</Link>
+        </li>
+        <li className="nav-item">
           <Link className="nav-link" to="/cart">Cart</Link>
         </li>
+        
       </ul>
       <form className="d-flex">
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>

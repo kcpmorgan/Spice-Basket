@@ -1,0 +1,9 @@
+.todo-page h3 {
+  color: darkgreen;
+}
+
+.todo-page .list {
+  display: inline-flex;
+  width: 100px;
+  margin-right: 5px;
+}
