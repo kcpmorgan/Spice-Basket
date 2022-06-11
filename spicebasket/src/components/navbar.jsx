@@ -1,11 +1,14 @@
 
 import "./navbar.css";
 import {Link} from 'react-router-dom';
+import { useContext} from 'react';
+import StoreContext from "../context/storeContext";
 
 function Navbar(){
+  let cart = useContext(StoreContext).cart;
+
     return (
-    
-        <nav className="navbar navbar-expand-lg navbar-dark">
+  <nav className="navbar navbar-expand-lg navbar-dark">
   <div className="container-fluid">
     <Link className="navbar-brand" to="/">Spice Basket</Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,14 +31,9 @@ function Navbar(){
         <li className="nav-item">
           <Link className="nav-link" to="/todo">Shopping List</Link>
         </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/cart">Cart</Link>
-        </li>
-        
       </ul>
       <form className="d-flex">
-        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button className="btn btn-outline-success" type="submit">Search</button>
+      <Link className="btn btn-outline-light" to="/cart"> {cart.length} View Cart</Link>
       </form>
     </div>
   </div>

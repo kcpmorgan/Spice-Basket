@@ -12,24 +12,27 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import GlobalStoreProvider from "./context/globalStoreProvider";
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Navbar></Navbar>
+      <GlobalStoreProvider>
+        <BrowserRouter>
+          <Navbar></Navbar>
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/catalog" element={<Catalog />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/admin" element={<Admin />} />
-          <Route path="/todo" element={<Todo />} />
-        </Routes>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/catalog" element={<Catalog />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/todo" element={<Todo />} />
+          </Routes>
 
-        <Footer></Footer>
-      </BrowserRouter>
+          <Footer></Footer>
+        </BrowserRouter>
+      </GlobalStoreProvider>
     </div>
   );
 }

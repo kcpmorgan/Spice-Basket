@@ -1,11 +1,14 @@
 import './product.css'
 import Quantitypicker from './quantityPicker';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import StoreContext from '../context/storeContext';
 
 // Arrow function
 
 const Product = (props) => {
     let [quantity, setQuantity] = useState(1);
+     let addProdToCart = useContext(StoreContext).addProdToCart;
+
 
     let onQuantityChange = (value) => {
         //use the value to update the quantity
@@ -19,6 +22,14 @@ const getTotal = () => {
     return total.toFixed(2);
 };
 
+const addProduct = () => {
+    console.log("adding product to cart", props.data.title);
+    let prodForCart = {...props.data, quantity: quantity};
+    addProdToCart(prodForCart);
+   
+
+};
+
     return(
         <div className='product'>
             <img className='productImg' src={'/img/'+props.data.image}></img>
@@ -26,7 +37,7 @@ const getTotal = () => {
             <label>${props.data.price}</label>
             <label>${getTotal()}</label>
             <Quantitypicker onChange={onQuantityChange} ></Quantitypicker>
-            <button class="btn btn-primary btn-sm" >Add</button>
+            <button onClick={addProduct} class="btn btn-primary btn-sm" >Add</button>
             
             
          </div>);
