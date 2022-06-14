@@ -32,9 +32,9 @@ const addProduct = () => {
 
     return(
         <div className='product'>
-            <img className='productImg' src={'/img/'+props.data.image}></img>
+            <img className='productImg' src={'/img/'+props.data.image} alt="product"></img>
             <h3>{props.data.title}</h3>
-            <label>${props.data.price}</label>
+            <label>${props.data.price.toFixed(2)}</label>
             <label>${getTotal()}</label>
             <Quantitypicker onChange={onQuantityChange} ></Quantitypicker>
             <button onClick={addProduct} class="btn btn-primary btn-sm" >Add</button>
