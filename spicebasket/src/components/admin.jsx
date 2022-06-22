@@ -1,5 +1,6 @@
 import "./admin.css";
-import {useState} from "react";
+import { useState, useEffect } from "react";
+import Dataservice from "../services/dataService";
 
 const Admin = () => {
     const [product, setProduct] = useState({});
@@ -7,8 +8,14 @@ const Admin = () => {
     const [allCoupons, setAllCoupons] = useState([]);
     const [allProducts, setAllProducts] = useState([]);
 
-    const saveProduct = () => {
+    const saveProduct = async () => {
         console.log("saving product", product);
+
+        let productCopy = {...product};
+        productCopy.price = +productCopy.price;  // + forces the string to be aparse to a num
+
+        let service = new Dataservice();
+        await service.saveProduct(productCopy);
 
         let copy = [...allProducts];
         copy.push(product);
@@ -23,7 +30,6 @@ const Admin = () => {
       copy[name] = val;
       setProduct(copy);
     };
-    //TODO - send the produt to service -> to backend
 
     const couponChanged = (e) => {
         let name = e.target.name;
@@ -34,16 +40,38 @@ const Admin = () => {
         setCoupon(copy);
     };
 
-    const saveCoupon = () => {
+    const saveCoupon = async () => {
         console.log("Saving coupon", coupon);
+
+        let service = new Dataservice();
+        let couponCopy = {...coupon};
+        couponCopy.discount = parseFloat(couponCopy.discount);
+        await service.saveCoupon(couponCopy);
 
         let copy = [...allCoupons];
         copy.push(coupon);
         setAllCoupons(copy);
 
         //TODO - send the coupon to service -> to backend
+        
     };
-    
+
+    const loadProducts = async () => {
+        let service = new Dataservice();
+        let data = await service.getCatalog();
+        setAllProducts(data);
+    }
+    const loadCoupons = async () => {
+        let service = new Dataservice();
+        let data = await service.getCoupons();
+        setAllCoupons(data);
+    };
+
+    useEffect(() => {
+        loadCoupons();
+        loadProducts();
+    }, []);
+
     return (
         <div className='admin-page'>
             <h4>Store Administration</h4>
